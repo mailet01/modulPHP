@@ -16,6 +16,7 @@ for ($i = 1; $i <11; $i++) {
 ?>
 
 <?php
+$a=20;
 while ($a <= 20) {
 if ($a % 2 == 0) {
     echo $a . PHP_EOL;
@@ -56,8 +57,7 @@ echo "<table>";
 for ($row =0; $row < $nrows; $row += 1) {
     echo "<tr>";
     for ($col=0; $col < $ncols; $col+= 1) {
-        echo "<td> class="black"" 
-        # code...
+        echo "<td>class=black</td>";
     }
 }
 
