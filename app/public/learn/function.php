@@ -93,7 +93,7 @@ $title = "funktioner";
      * is_orderable
      *
      * @param  int $x
-     * @param  int $max
+     * @param  int $max default 100, används om parametern ej används
      * @return void
      */
     function is_orderable(int $x, int $max = 100)
@@ -103,6 +103,8 @@ $title = "funktioner";
         } else {
             return false;
         }
+        // som enrads alternativ return
+        return ($x > 0 && $x < $max);
     }
     // anropa funktionen med de argument som ska gälla
 // skapa en funktion som presenterar en persons namn och ålder.
@@ -115,9 +117,68 @@ function render_result($first_name, $last_name, $age)
 echo "<p> Mitt namn är $first_name, $last_name och jag är $age år gammal</p>";
 }
 render_result("Flisa", "Hedenhös", 5);
+// ett exempel på hur man backend kan hantera olika språk för formulärfält
+
+// skapa en array med standard språk
+$english = ["wellcome" => "hello, wellcome to this app",
+ "name" => "please enter name", 
+ "reset" => "reset",
+ "save" => "save",];
+
+ $swedish = [
+    "wellcome" => " hej, vällkommen till denna applikation ",
+    "name" => "skriv in tditt namn", 
+    "reset" => "börja om",
+    "save" => "spara",
+   
+ ];
+ $german = [
+    "wellcome" => " Hi, willkommen zu dieser anwendung ",
+    "name" => "schribe deinen namen", 
+    "reset" => "zurücksetzen",
+    "save" => "speichern",
+ ];
+//  skapa en array med giltiga språk
+$languages = [
+    "en" => $english,
+    "sv" => $swedish,
+    "ge" => $german, 
+];
+// en variabel för aktivt språk
+// skulle kunna sparas i en session, eller om man i applikationen först fått möjlighet att välja...
+// men nu bestämt så här...
+$language = "ge";
 
     include "_includes/header.php";
     ?>
+    <form action="#" method="post">
+<p> välkommen till applikationen
+
+</p>
+    <input type="text" name="first_name" id="" placeholder="ditt förnamn">
+<input type="reset" value="nollställ">
+<button>spara</button>
+
+    </form>
+    <hr> <form action="#" method="post">
+<p> 
+<?= $languages[$language]["wellcome"]?>
+</p>
+    <input type="text" name="first_name" id="" placeholder=" <?= $languages[$language]["name"]?>">
+<input type="reset" value="<?= $languages[$language]["reset"] ?>">
+<button><?= $languages[$language]["save"] ?></button>
+
+    </form>
+    <hr> <form action="#" method="post">
+<p> 
+
+</p>
+    <input type="text" name="first_name" id="" placeholder="ditt förnamn">
+<input type="reset" value="nollställ">
+<button>spara</button>
+
+    </form>
+    
     <h1><?= $title ?></h1>
     <?php
     include "_includes/footer.php";
