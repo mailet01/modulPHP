@@ -73,6 +73,42 @@ for ($i=0; $i <count($years) ; $i++) {
 }
 
 ?>
+<br>
+<?php 
+
+$persons = ["Emil, Jocke, Henrik, Hugo, Sara"];
+for ($i=0; $i < count($persons); $i++) { 
+    echo $persons [$i];
+}
+
+
+?>
+<br>
+<?php 
+$fruits = ["apple, orange, bananas,"];
+for ($i=0; $i <count($fruits) ; $i++) { 
+    echo $fruits [$i];
+}
+
+?>
+<br>
+<?php 
+$dishes = ["bolognese, lasagne, kebab, pizza, korv"];
+for ($i=0; $i <count($dishes) ; $i++) { 
+    echo $dishes [$i];
+}
+
+
+?>
+<br>
+<?php 
+$cars = ["volvo, ford, skoda"];
+for ($i=0; $i <count($cars) ; $i++) { 
+    echo $cars [$i];
+}
+
+?>
+<br>
 
 
 </body>

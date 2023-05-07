@@ -1,1 +1,9 @@
-<footer>skapad av Emil Näslund</footer>    
+<footer>
+    
+
+skapad av Emil Näslund
+<?= render_copyright() ?>
+
+
+
+</footer>    
