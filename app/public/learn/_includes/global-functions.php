@@ -15,12 +15,13 @@
 
 }
 
+/* 
 * render_copyright
 *
 * @return void;
 */
 
-function renderCopyright()
+function render_copyright()
 {
     $year = date("Y");
 
